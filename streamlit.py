@@ -3,8 +3,6 @@ import pandas as pd
 import plotly.express as px
 import geopandas as gpd
 
-geo_df = gpd.read_file(gpd.datasets.get_path('naturalearth_cities'))
-
 ## configure page
 st.set_page_config(
     page_title="Downtown Salisbury Commuter Survey (Responses) Analysis",
