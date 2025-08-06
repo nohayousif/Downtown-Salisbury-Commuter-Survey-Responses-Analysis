@@ -267,7 +267,7 @@ accessibility_df = df['How accessible are dedicated bikes lanes or sidewalks bet
 accessibility_df.columns = ['Accessibility', 'Number of Employees']
 
 # create pie chart
-accessibility_pie = px.pie(accessibility_df, names='Accessibility', values='Number of Employees', title='How accessible are dedicated bikes lanes or sidewalks between your home and workplace?')
+accessibility_pie = px.pie(accessibility_df, names='Accessibility', values='Number of Employees', title='Accessibility of Dedicated Bikes Lanes or Sidewalks Between Home and Workplace')
 st.plotly_chart(accessibility_pie)
 
 
@@ -281,22 +281,19 @@ col9, col10 = st.columns(2)
 # create dataframe
 coworkers_df = df['Do you think your coworkers would be more likely to bike or walk to work if more people in your office did?'].value_counts().reset_index()
 coworkers_df.columns = ['Likelihood', 'Number of Employees']
-
 # create pie chart
-coworkers_pie = px.pie(coworkers_df, names='Likelihood', values='Number of Employees', title='Do you think your coworkers would be more likely to bike or walk to work if more people in your office did?')
+coworkers_pie = px.pie(coworkers_df, names='Likelihood', values='Number of Employees', title='Would Seeing Coworkers Bike/Walk to Work Encourage You to Join?')
 col9.plotly_chart(coworkers_pie)
 
 # create dataframe
 challenge_df = df['Would you participate in a "walk or bike to work" challenge or group if it were organized by your workplace?'].value_counts().reset_index()
 challenge_df.columns = ['Response', 'Number of Employees']
-
 # create pie chart
-challenge_pie = px.pie(challenge_df, names='Response', values='Number of Employees', title='Would you participate in a "walk or bike to work" challenge or group if it were organized by your workplace?')
+challenge_pie = px.pie(challenge_df, names='Response', values='Number of Employees', title='Likelihood to Participate in a "Walk/Bike to Work" Challenge or Group')
 col10.plotly_chart(challenge_pie)
 
 
 col11, col12 = st.columns(2)
-
 
 # create dataframe
 rating_df = pd.DataFrame({
@@ -315,12 +312,11 @@ rating_df = pd.DataFrame({
         (df['On a scale of 1-5, how likely are you to consider walking or biking to work in the future? '] == 5).sum(),
     ]
 })
-
 # plot bar chart
 rating_bar = px.bar(rating_df, 
              x='Rating (1-5)', 
              y='Number of Employees',
-             title="On a scale of 1-5, how likely are you to consider walking or biking to work in the future?",
+             title="Likelihood to Consider Walking/Biking to Work",
              text = 'Number of Employees'
 )
 rating_bar .update_layout(bargap=0.2)
@@ -329,9 +325,8 @@ col11.plotly_chart(rating_bar)
 # create dataframe
 incentives_df = df['If there were more incentives (e.g. subsidies for bikes, discounts, gym memberships, etc) would you be more likely to walk or bike to work? '].value_counts().reset_index()
 incentives_df.columns = ['Response', 'Number of Employees']
-
 # create pie chart
-incentives_pie = px.pie(incentives_df, names='Response', values='Number of Employees', title='If there were more incentives (e.g. subsidies for bikes, discounts, gym memberships, etc) would you be more likely to walk or bike to work?')
+incentives_pie = px.pie(incentives_df, names='Response', values='Number of Employees', title='Would More Incentives Increase Your Likelihood to Walk/Bike to Work?')
 col12.plotly_chart(incentives_pie)
 
 with st.expander("💡 What Else Did We Learn?"):
