@@ -1,0 +1,7 @@
+streamlit
+pandas
+plotly
+geopandas
+numpy
+geopy.geocoders
+geopy.exc
