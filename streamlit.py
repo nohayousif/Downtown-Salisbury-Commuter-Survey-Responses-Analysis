@@ -45,7 +45,7 @@ col4.metric("Median Commute Length (Miles)", median_commute_length, border=True)
 
 st.header("Where are Downtown Employees Commuting From and To?")
 
-col5, col6 = st.columns(2, border=True)
+col5, col6 = st.columns(2)
 
 ## create maps
 
@@ -157,7 +157,7 @@ with st.expander("💡 More Info"):
 # How Would Employees CONSIDER Commuting Downtown for Work? #
 #############################################################
 
-col7, col8 = st.columns(2, border=True)
+col7, col8 = st.columns(2)
 
 col7.subheader("How Would Employees CONSIDER Commuting Downtown for Work?")
 
@@ -276,7 +276,7 @@ st.plotly_chart(accessibility_pie)
 ###########################################################
 st.header("How Interested are Employees in Changing their Commute?")
 
-col9, col10 = st.columns(2, border=True)
+col9, col10 = st.columns(2)
 
 # create dataframe
 coworkers_df = df['Do you think your coworkers would be more likely to bike or walk to work if more people in your office did?'].value_counts().reset_index()
@@ -293,7 +293,7 @@ challenge_pie = px.pie(challenge_df, names='Response', values='Number of Employe
 col10.plotly_chart(challenge_pie)
 
 
-col11, col12 = st.columns(2, border=True)
+col11, col12 = st.columns(2)
 
 # create dataframe
 rating_df = pd.DataFrame({
